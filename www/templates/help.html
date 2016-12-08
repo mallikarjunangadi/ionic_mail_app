@@ -1,0 +1,34 @@
+<ion-view view-title="Help" ng-controller="helpCtrl">
+  <ion-content>
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="loadInboxFromDB()">
+  </ion-refresher>
+
+   <button class="button bar-stable" ng-click="storeValues('inbox')">click to insert Inbox values</button>
+   <button class="button bar-stable" ng-click="deleteAll('inbox')">delete inbox records</button><br/><br/>
+
+   <button class="button bar-stable" ng-click="storeValues('sentMails')">click to insert sent values</button>
+   <button class="button bar-stable" ng-click="deleteAll('sentMails')">delete sentmails records</button><br/><br/>
+
+   <button class="button bar-stable" ng-click="storeValues('drafts')">click to insert drafts values</button>
+   <button class="button bar-stable" ng-click="deleteAll('drafts')">delete draft records</button><br/><br/>
+
+   <button class="button bar-stable" ng-click="storeValues('spam')">click to insert Spamvalues</button>
+   <button class="button bar-stable" ng-click="deleteAll('spam')">delete spam records</button><br/><br/>
+   
+   <button class="button bar-stable" ng-click="storeValues('bin')">click to insert Bin values</button>
+   <button class="button bar-stable" ng-click="deleteAll('bin')">delete bin records</button>
+   
+
+   <div class="list">
+    <a class="item item-avatar" ng-repeat="mail in inboxMails">
+     <img src="{{mail.attachments}}"> <span class="right">{{mail.mailDateTime}}</span>
+     <h2>{{Sandeep}}</h2> 
+     <p>{{mail.mailSubject}}</p>
+     <p>{{mail.mailBody}}</p>
+    </a>  
+   </div>
+
+  </ion-content> 
+</ion-view>

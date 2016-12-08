@@ -1,0 +1,59 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-assertive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-search">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+      
+    <ion-content>
+      <ion-list> 
+        <ion-item style="background-image:url('img/happy.jpg')">
+         <img src="img/messi.jpg" style="border-radius:50%;width:60px;height:60px;">      
+         <h3>Leono Messi</h3> 
+         <p>leono_messi@gmail.com</p> 
+        </ion-item>       
+        <ion-item class="item-borderless item-icon-left" menu-close href="#/app/inbox">
+         <i class="icon ion-email"></i>
+          Inbox <span class="right">99+</span>
+        </ion-item>
+        <ion-item class="item-borderless item-icon-left" menu-close href="#/app/sent">
+         <i class="icon ion-android-send"></i>
+          Sent 
+        </ion-item>
+        <ion-item class="item-borderless item-icon-left" menu-close href="#/app/drafts">
+         <i class="icon ion-android-drafts"></i>
+          Drafts <span class="right">22</span>
+        </ion-item>
+        <ion-item class="item-borderless item-icon-left" menu-close href="#/app/spam">
+         <i class="icon ion-android-alert"></i>
+          Spam  <span class="right">49</span>
+        </ion-item>
+        <ion-item class="item-borderless item-icon-left" menu-close href="#/app/bin">
+         <i class="icon ion-android-remove-circle"></i>
+          Bin
+        </ion-item>
+        <ion-item class="item-borderless item-icon-left" menu-close href="#/app/settings">
+         <i class="icon ion-ios-gear"></i>
+          Settings
+        </ion-item>
+        <ion-item class="item-borderless item-icon-left" menu-close href="#/app/help">
+         <i class="icon ion-help-circled"></i>
+          Help
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

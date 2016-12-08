@@ -1,0 +1,14 @@
+<ion-view view-title="Signature" ng-controller="signatureCtrl">
+ <ion-content>
+ <label class="item item-borderless item-input text">
+  <textarea placeholder="Enter your signature here...... " rows="6" ng-model="signature.description" name="description">
+    {{signature.description}}
+  </textarea>
+ </label>
+
+
+ <button style="width:33%" class="button button-assertive" ng-click="cancel()">Cancel</button>
+ <button style="width:33%" class="button button-positive" ng-click="save()"> Save</button>
+ <button style="width:33%" class="button button-stable" ng-click="clear()">Clear </button>
+ </ion-content>
+</ion-view>  

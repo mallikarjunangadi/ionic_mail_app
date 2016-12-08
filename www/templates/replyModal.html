@@ -1,0 +1,54 @@
+<ion-modal-view >
+  <ion-header-bar class="bar-assertive">
+   <div class="buttons"> 
+    <button class="button button-clear" ng-click="replyModalHide()"><i class="icon ion-android-arrow-back"></i></button>
+   </div> 
+    <h1 class="title">Compose</h1>
+   <div class="buttons">  
+    <button style="padding:0px 15px;transform:rotate(90deg)" class="button button-clear" ng-click="openPopover($event)"><i class="icon ion-android-attach"></i></button>
+    <button style="padding:0px 15px;" class="button button-clear" ng-click=""><i class="icon ion-android-send"></i></button>
+    <button class="button button-clear" ng-click="openPopover2($event)"><i class="icon ion-android-more-vertical"></i></button>
+   </div> 
+  </ion-header-bar> 
+
+ <ion-content>
+  <form ng-submit=""> 
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">From</span>
+          <input type="text" ng-model="mailData.from">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">To</span>
+          <input type="text" ng-model="mailData.to">
+        </label>
+        <label class="item item-input" style="word-wrap: break-word; white-space:pre-wrap;"> 
+          <input type="text" ng-model="mailData.subject" placeholder="Subject">
+        </label>
+        <label class="item item-input text" style="word-wrap: break-word; white-space:pre-wrap;">
+          <textarea rows="3" ng-model="mailData.composeBody" placeholder="Compose email">
+                                   
+          </textarea>
+        </label>
+        <label class="item item-input item-borderless">  
+          <ion-checkbox style="border:0px;font-size:small;" ng-model="checked">Quote text</ion-checkbox>
+        </label>
+        <label ng-show="checked" class="item item-input text" style="border-bottom:0px;">
+          <textarea rows="8" ng-model="mailData.body" ng-disabled="true" placeholder="Compose email">
+                                   
+          </textarea>
+        </label> 
+      </div> 
+    </form>
+
+    <div class="displayMailAttach">
+     <ul>
+      <li ng-repeat="name in fileNames">
+        <img src="{{name.imageIcon}}" class="attachedIconImage"></span>
+        {{name.fileNames}}
+        <span class="spanDiv" ng-click="removeAttachment($index)">&times;</span>
+      </li>
+     </ul>
+    </div>
+ </ion-content>
+</ion-modal-view>

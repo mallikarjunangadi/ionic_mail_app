@@ -1,0 +1,19 @@
+<ion-view view-title="Sent" ng-controller="sentCtrl">
+  <ion-content>
+   <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="loadsentFromDB()">
+  </ion-refresher>
+  
+   <div class="list">
+    <a class="item item-avatar" ng-click="openMailModal(mail)" ng-repeat="mail in sentMails">
+     <img src="{{mail.attachments}}"> <span class="right">{{mail.mailDateTime | toDateFilter}}</span>
+     <h2>Chandru</h2> 
+     <p>{{mail.mailSubject}}</p>
+     <p>{{mail.mailBody}}</p>
+    </a>   
+   </div>
+
+  </ion-content>
+</ion-view>
+  

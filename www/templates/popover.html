@@ -1,0 +1,15 @@
+<ion-popover-view style="height:120px;width:200px">
+ <ion-content>
+  <ion-list>
+   <ion-item>
+   <label class="fileContainer">
+    Attach file
+    <input type="file" ng-click="" onchange="angular.element(this).scope().filesDisplay(this)" name="file" id="file" class="inputfile" multiple/>
+   </label> 
+   </ion-item>
+   <ion-item ng-click="dummy()">
+      Insert from Drive
+   </ion-item> 
+  </ion-list>
+ </ion-content>
+</ion-popover-view>

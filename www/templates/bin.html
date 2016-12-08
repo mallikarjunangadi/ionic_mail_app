@@ -1,0 +1,19 @@
+<ion-view view-title="Bin" ng-controller="binCtrl">
+  <ion-content>
+   <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="loadBinFromDB()">
+  </ion-refresher>
+  
+   <div class="list">
+    <a class="item item-avatar" ng-click="openMailModal(mail)" ng-repeat="mail in binMails">
+     <img src="{{mail.attachments}}"> <span class="right">{{mail.mailDateTime | toDateFilter}}</span>
+     <h2>Kiran</h2> 
+     <p>{{mail.mailSubject}}</p>
+     <p>{{mail.mailBody}}</p>
+    </a>   
+   </div>
+
+  </ion-content>
+</ion-view>
+ 

@@ -1,0 +1,22 @@
+<ion-view view-title="Inbox" ng-controller="inboxCtrl">
+   <ion-floating-button click="compose()" has-footer="false" button-color="#f10000" icon="ion-compose" iconColor="#f00">
+   </ion-floating-button>
+  
+ <ion-content> 
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="loadInboxFromDB()">
+  </ion-refresher>
+  
+   <div class="list">
+    <a class="item item-avatar" on-hold="showOnHold($event)" ng-click="openMailModal(mail)" ng-repeat="mail in inboxMails">
+     <img src="{{mail.attachments}}"> <span class="right">{{mail.mailDateTime | toDateFilter}}</span>
+     <h2>Siddarth</h2> 
+     <p>{{mail.mailSubject}}</p>
+     <p>{{mail.mailBody}}</p>
+    </a>    
+   </div>
+
+  </ion-content> 
+</ion-view>
+   

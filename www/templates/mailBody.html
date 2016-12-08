@@ -1,0 +1,50 @@
+<ion-modal-view>
+ <ion-header-bar class="bar-assertive">
+  <div class="buttons">
+   <button class="button button-clear" ng-click="closeOpenMailModal()"><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <div id="mailButtons" class="buttons">
+   <button class="button button-clear"><i class="icon ion-ios-download"></i></button>
+   <button class="button button-clear" ng-click="deleteMail(mailBodyObj.mailId)"><i class="icon ion-ios-trash"></i></button>
+   <button class="button button-clear"><i class="icon ion-email"></i></button>
+   <button class="button button-clear" ng-click="openmailBodyPopover1($event)"><i class="icon ion-android-more-vertical"></i></button> 
+  </div>
+ 
+ </ion-header-bar>  
+ <ion-content>
+   <ion-list>
+    <ion-item>
+      <h2 style="word-wrap: break-word; white-space:pre-wrap;"> {{mailBodyObj.mailSubject}} </h2> 
+    </ion-item>
+    <ion-item class="item-avatar">
+      <img src="{{mailBodyObj.attachments}}"></img>
+      <span class="right"><span ng-click=""><i class="icon ion-reply"></i></span><span ng-click="openmailBodyPopover2($event)"><i class="icon ion-android-more-vertical"></i></span></span>
+      <h3> Mallikarjun Angadi </h3>
+      <p> to {{mailBodyObj.mailTo}}</p>
+      <p> {{mailBodyObj.mailDateTime | toDateFilter}} </p> <a ng-click="func()">{{showText}}</a>
+      
+       <div ng-show="showMe">
+          <br/>
+        <table class="mailDetailsTable">   
+         <tr><td> <p>From     </p></td> <td style="overflow-wrap: break-word;width:10px;">: <a>{{mailBodyObj.mailFrom}}</a> </td><tr/>
+         <tr><td> <p>Reply-to </p></td> <td>:                                 </td></tr>
+         <tr><td> <p>To       </p></td> <td>: <a>{{mailBodyObj.mailTo}}  </a> </td><tr/>
+         <tr><td> <p>Bcc      </p></td> <td>: <a>{{mailBodyObj.mailBcc}} </a> </td><tr/>
+         <tr><td> <p>Date     </p></td> <td>:    {{mailBodyObj.mailDateTime | toDateFilter}} </td><tr/>
+         <tr><td> <p>Cc       </p></td> <td>: <a>{{mailBodyObj.mailCc}}  </a> </td><tr/>
+         <tr><td> <p>Security </p></td> <td>:</td> </tr>  
+        </table> 
+       </div>  
+
+    </ion-item> 
+    <ion-item class="item item-borderless" style="min-height:150px;">
+      <p style="word-wrap: break-word; white-space:pre-wrap;">{{mailBodyObj.mailBody}}</p> 
+    </ion-item>
+    <ion-item style="margin:auto;border-bottom:0px;">
+     <span ng-click="replyMail(mailBodyObj)" style="padding:20px"><i class="icon ion-reply"></i>  reply </span>    
+     <span ng-click="" style="padding:20px"><i class="icon ion-reply-all"></i>  reply all </span> 
+     <span ng-click="" style="padding:20px"> forward  <i class="icon icon-right ion-forward"></i> </span>
+    </ion-item>
+   </ion-list>  
+ </ion-content>
+</ion-modal-view> 

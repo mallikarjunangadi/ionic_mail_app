@@ -1,0 +1,18 @@
+<ion-view view-title="Spam" ng-controller="spamCtrl">
+  <ion-content>
+   <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="loadSpamFromDB()">
+  </ion-refresher>
+  
+   <div class="list">
+    <a class="item item-avatar" ng-click="openMailModal(mail)" ng-repeat="mail in spamMails">
+     <img src="{{mail.attachments}}"> <span class="right">{{mail.mailDateTime | toDateFilter}}</span>
+     <h2>Sandeep</h2> 
+     <p>{{mail.mailSubject}}</p>
+     <p>{{mail.mailBody}}</p>
+    </a>   
+   </div>
+
+  </ion-content>
+</ion-view>
